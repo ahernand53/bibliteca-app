@@ -1,5 +1,3 @@
-
-
 import csv
 from typing import List
 from models.libro import Libro
@@ -10,13 +8,14 @@ class Biblioteca:
     def __init__(self, nombre_archivo):
         self.NOMBRE_ARCHIVO = nombre_archivo
         self.lista_libros: List[Libro] = []
+        self.cargar_libros_csv()
 
     def cargar_libros_csv(self):
         with open(self.NOMBRE_ARCHIVO, 'r') as file:
             for line in file:
                 propiedades = line.split(",")
                 libro = Libro(*propiedades)
-                self.lista_libros.insert(libro)
+                self.lista_libros.append(libro)
 
     def listar_libros(self):
         if self.lista_libros.__len__ == 0:

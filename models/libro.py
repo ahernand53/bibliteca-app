@@ -7,10 +7,10 @@ class Libro:
         self.titulo = titulo
         self.autor = autor
         self.numero_paginas = numero_paginas
-        self.__fecha_publicacion = fecha_publicacion
+        self.fecha_publicacion = fecha_publicacion
 
     def obtener_fecha_publicacion(self):
-        fecha = datetime.date(self.__fecha_publicacion.split('/'))
+        fecha = datetime.date(self.fecha_publicacion.split('/'))
 
         return str(fecha)
 
